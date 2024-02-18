@@ -329,6 +329,21 @@ export default class QuillEditor extends React.Component<
     return this.postAwait<any>({ command: 'setContents', delta });
   };
 
+  formatLine = (
+    index: number,
+    length: number,
+    formats: Record<string, unknown>,
+    source = Source.API
+  ): Promise<any> => {
+    return this.postAwait({
+      command: 'formatLine',
+      index,
+      length,
+      formats,
+      source,
+    });
+  };
+
   setText = (text: string) => {
     this.post({ command: 'setText', text });
   };
