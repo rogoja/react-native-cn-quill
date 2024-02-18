@@ -205,6 +205,16 @@ export const editor_js = `
     sendMessage(formatTextJson);
   }
 
+  const formatLine = function (key, index, length, formats, source) {
+    const formatLineData = quill.formatLine(index, length, formats, source);
+    const formatLineJson = JSON.stringify({
+      type: 'format-line',
+      key: key,
+      data: formatLineData
+    });
+    sendMessage(formatLineJson);
+  }
+
 
   var getRequest = function (event) {
     var msg = JSON.parse(event.data);
