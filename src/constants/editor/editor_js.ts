@@ -294,6 +294,9 @@ export const editor_js = `
       case 'formatText':
         formatText(msg.key, msg.index, msg.length, msg.formats, msg.source);
         break;
+      case 'formatLine':
+        formatLine(msg.key, msg.index, msg.length, msg.formats, msg.source);
+        break;
       default:
         break;
     }
