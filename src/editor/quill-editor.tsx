@@ -131,6 +131,7 @@ export default class QuillEditor extends React.Component<
           toolbar: false,
         },
         theme: 'snow',
+        readOnly: false,
       },
       customFonts = [],
       customStyles = [],
